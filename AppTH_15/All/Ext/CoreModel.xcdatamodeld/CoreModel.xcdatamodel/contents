@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23B74" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="GameModel" representedClassName="GameModel" syncable="YES" codeGenerationType="class">
+        <attribute name="gDescr" optional="YES" attributeType="String"/>
+        <attribute name="gIm" optional="YES" attributeType="String"/>
+        <attribute name="gName" optional="YES" attributeType="String"/>
+        <attribute name="gType" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PlayerModel" representedClassName="PlayerModel" syncable="YES" codeGenerationType="class">
+        <attribute name="plGame" optional="YES" attributeType="String"/>
+        <attribute name="plIm" optional="YES" attributeType="String"/>
+        <attribute name="plName" optional="YES" attributeType="String"/>
+        <attribute name="plNewWin" optional="YES" attributeType="String"/>
+        <attribute name="plWin" optional="YES" attributeType="String"/>
+    </entity>
+</model>
