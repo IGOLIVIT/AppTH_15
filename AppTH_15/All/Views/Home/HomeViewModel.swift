@@ -23,7 +23,7 @@ final class HomeViewModel: ObservableObject {
     @Published var addNW: String = ""
     @Published var addNS: String = ""
 
-    @Published var types: [String] = ["Playing", "Completed", "Just created"]
+    @Published var types: [String] = ["Playing", "Held", "Completed", "Just created"]
     @Published var curType = "Playing"
     
     @Published var imPlayers: [String] = ["boy1", "boy2", "girl1", "girl2"]

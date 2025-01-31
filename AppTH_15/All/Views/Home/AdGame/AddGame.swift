@@ -125,11 +125,11 @@ struct AddGame: View {
                                     }, label: {
                                         
                                         Text(index)
-                                            .foregroundColor(index == "Playing" ? Color("prim3") : index == "Completed" ? Color("prim2") : Color("prim"))
+                                            .foregroundColor(index == "Playing" ? Color("prim3") : index == "Completed" ? Color("prim2") : index == "Held" ? Color.white.opacity(0.7) : Color("prim"))
                                             .font(.system(size: 15, weight: .medium))
                                             .padding(6)
                                             .frame(width: 140)
-                                            .background(RoundedRectangle(cornerRadius: 20).fill(index == "Playing" ? Color("prim3").opacity(0.4) : index == "Completed" ? Color("prim2").opacity(0.4) : Color("prim").opacity(0.4)))
+                                            .background(RoundedRectangle(cornerRadius: 20).fill(index == "Playing" ? Color("prim3").opacity(0.4) : index == "Completed" ? Color("prim2").opacity(0.4) : index == "Held" ? Color("prim4") : Color("prim").opacity(0.4)))
                                             .background(RoundedRectangle(cornerRadius: 20).stroke(.red.opacity(viewModel.curType == index ? 1 : 0), lineWidth: 2))
                                     })
                                 }
