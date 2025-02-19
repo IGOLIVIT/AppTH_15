@@ -1,13 +1,14 @@
 //
-//  OB3.swift
+//  Rev.swift
 //  AppTH_15
 //
-//  Created by IGOR on 22/01/2025.
+//  Created by IGOR on 17/02/2025.
 //
 
 import SwiftUI
+import StoreKit
 
-struct OB3: View {
+struct Rev: View {
 
     @AppStorage("status") var status: Bool = false
     @Environment(\.presentationMode) var back
@@ -40,34 +41,18 @@ struct OB3: View {
                 
                 VStack(spacing: 12) {
                     
-                    Text("Analyze and Compete")
+                    Text("Rate our App!")
                         .foregroundColor(.white)
                         .font(.system(size: 28, weight: .semibold))
                     
-                    Text("Review detailed ratings and analyze performance trends.")
+                    Text("Rate our app in the AppStore. Help us to become better.")
                         .foregroundColor(.white)
                         .font(.system(size: 18, weight: .regular))
                         .padding(.horizontal)
                         .multilineTextAlignment(.center)
                     
                     Spacer()
-                    
-                    HStack {
-                        
-                        Button(action: {
-                            
-                            back.wrappedValue.dismiss()
-                            
-                        }, label: {
-                            
-                            Text("Back")
-                                .foregroundColor(.white)
-                                .font(.system(size: 16, weight: .medium))
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 50)
-                                .background(RoundedRectangle(cornerRadius: 8).fill(Color("prim")))
-                        })
-                        
+
                         Button(action: {
 
                             status = true
@@ -82,7 +67,6 @@ struct OB3: View {
                                 .background(RoundedRectangle(cornerRadius: 8).fill(Color("prim")))
                             
                         })
-                    }
                     .padding(.horizontal, 50)
                     
                 }
@@ -91,9 +75,13 @@ struct OB3: View {
                 .frame(height: 230)
             }
         }
+        .onAppear {
+            
+            SKStoreReviewController.requestReview()
+        }
     }
 }
 
 #Preview {
-    OB3()
+    Rev()
 }

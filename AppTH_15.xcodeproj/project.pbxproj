@@ -30,6 +30,11 @@
 		783F21B52D43A79800FAF642 /* AddPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F21B42D43A79800FAF642 /* AddPlayer.swift */; };
 		783F21B82D43B06B00FAF642 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F21B72D43B06B00FAF642 /* ProfileView.swift */; };
 		783F21BB2D43B24900FAF642 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F21BA2D43B24900FAF642 /* EditProfile.swift */; };
+		7874EDAA2D5CF37B000119B4 /* Duybv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7874EDA92D5CF37B000119B4 /* Duybv.swift */; };
+		7874EDAC2D5CF384000119B4 /* Sekopf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7874EDAB2D5CF384000119B4 /* Sekopf.swift */; };
+		7874EDAE2D5CF38F000119B4 /* Wameca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7874EDAD2D5CF38F000119B4 /* Wameca.swift */; };
+		7874EDB12D5D3BB4000119B4 /* U1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7874EDB02D5D3BB4000119B4 /* U1.swift */; };
+		7883816F2D63AAE700CEB9B5 /* Rev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883816E2D63AAE700CEB9B5 /* Rev.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,11 @@
 		783F21B42D43A79800FAF642 /* AddPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayer.swift; sourceTree = "<group>"; };
 		783F21B72D43B06B00FAF642 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		783F21BA2D43B24900FAF642 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
+		7874EDA92D5CF37B000119B4 /* Duybv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duybv.swift; sourceTree = "<group>"; };
+		7874EDAB2D5CF384000119B4 /* Sekopf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sekopf.swift; sourceTree = "<group>"; };
+		7874EDAD2D5CF38F000119B4 /* Wameca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wameca.swift; sourceTree = "<group>"; };
+		7874EDB02D5D3BB4000119B4 /* U1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = U1.swift; sourceTree = "<group>"; };
+		7883816E2D63AAE700CEB9B5 /* Rev.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rev.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,7 @@
 		783BEAA72D40FF9800FE39E4 /* Start */ = {
 			isa = PBXGroup;
 			children = (
+				7874EDAF2D5D3BAB000119B4 /* U */,
 				783BEAAA2D40FFAB00FE39E4 /* OB */,
 				783BEAA92D40FFA500FE39E4 /* Loading */,
 				783BEAA82D40FF9F00FE39E4 /* Launch */,
@@ -170,6 +181,9 @@
 				783BEACB2D4110E500FE39E4 /* Array.swift */,
 				783BEACD2D4110EC00FE39E4 /* CoreDataStack.swift */,
 				783BEACF2D4110F500FE39E4 /* DateConvert.swift */,
+				7874EDA92D5CF37B000119B4 /* Duybv.swift */,
+				7874EDAB2D5CF384000119B4 /* Sekopf.swift */,
+				7874EDAD2D5CF38F000119B4 /* Wameca.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -254,6 +268,15 @@
 			path = EditProfile;
 			sourceTree = "<group>";
 		};
+		7874EDAF2D5D3BAB000119B4 /* U */ = {
+			isa = PBXGroup;
+			children = (
+				7874EDB02D5D3BB4000119B4 /* U1.swift */,
+				7883816E2D63AAE700CEB9B5 /* Rev.swift */,
+			);
+			path = U;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,16 +352,21 @@
 				783BEAC42D4100D000FE39E4 /* HomeView.swift in Sources */,
 				783BEABE2D41000E00FE39E4 /* OB3.swift in Sources */,
 				783F21BB2D43B24900FAF642 /* EditProfile.swift in Sources */,
+				7883816F2D63AAE700CEB9B5 /* Rev.swift in Sources */,
 				783BEAB82D40FFF600FE39E4 /* OB1.swift in Sources */,
+				7874EDAC2D5CF384000119B4 /* Sekopf.swift in Sources */,
 				783BEA9A2D40FF6800FE39E4 /* ContentView.swift in Sources */,
+				7874EDAE2D5CF38F000119B4 /* Wameca.swift in Sources */,
 				783BEAD02D4110F500FE39E4 /* DateConvert.swift in Sources */,
 				783BEAB22D40FFCB00FE39E4 /* CoreModel.xcdatamodeld in Sources */,
 				783BEA982D40FF6800FE39E4 /* AppTH_15App.swift in Sources */,
+				7874EDAA2D5CF37B000119B4 /* Duybv.swift in Sources */,
 				783F21B22D43A78C00FAF642 /* GameDetail.swift in Sources */,
 				783BEACE2D4110EC00FE39E4 /* CoreDataStack.swift in Sources */,
 				783BEACA2D4110C200FE39E4 /* HomeViewModel.swift in Sources */,
 				783BEAC82D41096600FE39E4 /* RatingsView.swift in Sources */,
 				783F21A92D42DBBA00FAF642 /* AddGame.swift in Sources */,
+				7874EDB12D5D3BB4000119B4 /* U1.swift in Sources */,
 				783BEACC2D4110E500FE39E4 /* Array.swift in Sources */,
 				783F21B52D43A79800FAF642 /* AddPlayer.swift in Sources */,
 				783BEABC2D41000900FE39E4 /* OB2.swift in Sources */,
@@ -492,7 +520,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.1;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "IOI.AppTH-15";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -531,7 +559,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.1;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "IOI.AppTH-15";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
